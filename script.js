@@ -1,11 +1,13 @@
-function myFunction() {
+function myFunction(event) {
+
     var x = document.getElementById("myDIV");
     if (x.style.display === "none") {
       x.style.display = "block";
     } else {
       x.style.display = "none";
     }
-    myFunctionforButton()
+    myFunctionforButton();
+    smoothScroll(event);
 
     
 
@@ -13,7 +15,7 @@ function myFunction() {
 
   function myFunctionforButton() {
     var x = document.getElementById("hideButton1");
-console.log("dosabled")
+
     if (x.style.display === "none") {
       x.style.display = "block";
     } else {
@@ -54,6 +56,18 @@ function showUpdationStatus() {
   
 }
 
+
+function smoothScroll(event) {
+  event.preventDefault();
+  const targetId = event.target.getAttribute('href');
+  const targetElement = document.querySelector(targetId);
+  if (targetElement) {
+      window.scrollTo({
+          top: targetElement.offsetTop,
+          behavior: 'smooth'
+      });
+  }
+}
 
 
 
