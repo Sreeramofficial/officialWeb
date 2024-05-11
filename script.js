@@ -1,3 +1,6 @@
+
+
+//this method is to update list of updates
 function myFunction(event) {
 
     var x = document.getElementById("myDIV");
@@ -7,12 +10,14 @@ function myFunction(event) {
       x.style.display = "none";
     }
     myFunctionforButton();
-    smoothScroll(event);
 
     
 
   } 
+   
 
+
+  // this method is to scroll to hide second list
   function myFunctionforButton() {
     var x = document.getElementById("hideButton1");
 
@@ -23,6 +28,9 @@ function myFunction(event) {
     }
   }
 
+
+
+  //this method is to scroll top window
   function scrollToTop() {
     $(window).scrollTop(0);
 }
@@ -57,17 +65,6 @@ function showUpdationStatus() {
 }
 
 
-function smoothScroll(event) {
-  event.preventDefault();
-  const targetId = event.target.getAttribute('href');
-  const targetElement = document.querySelector(targetId);
-  if (targetElement) {
-      window.scrollTo({
-          top: targetElement.offsetTop,
-          behavior: 'smooth'
-      });
-  }
-}
 
 
 
