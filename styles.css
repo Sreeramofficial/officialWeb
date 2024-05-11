@@ -12,8 +12,9 @@
 
 .banner-card img{
   max-width: 100%;
-
-  height: auto;
+  margin-left: 10%;
+  margin-right: 10%;
+  height: 500px;
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
 
