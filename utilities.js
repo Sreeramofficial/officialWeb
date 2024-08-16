@@ -34,12 +34,27 @@ function checkIsEmpty(name, email) {
   }
 }
 function handleJson(name, email) {
+  
   var text = document.getElementById("output").innerHTML.replace("}", "");
-  document;
+  // if(document.getElementById("newArray").value == "Close Array"){
 
-  document.getElementById("output").innerHTML =
-    text + ",<br>" + '"' + name + '"' + " : " + '"' + email + '"' + "<br> } ";
-}
+    
+    
+      document.getElementById("output").innerHTML =
+        text +
+        ",<br>" +
+        '"' +
+        name +
+        '"' +
+        " : " +
+        '"' +
+        email +
+        '"' +
+        "<br> } ";
+  }
+
+
+
 function generateRandomString(length) {
   const characters =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -75,6 +90,7 @@ function clearJson(event) {
   event.preventDefault();
   document.getElementById("outputTitle").innerHTML = null;
   document.getElementById("output").innerHTML = "PLEASE ADD NEW JSON";
+  document.getElementById("newArray").innerHTML = "New Array";
 }
 function displayPrecisionBox() {
   console.log("methods call")
@@ -87,7 +103,36 @@ function displayPrecisionBox() {
     document.getElementById("inputforcheck2").checked == true
   ) {
     styles.style.display = "block";
+    document.getElementById("valueForInput").value = 2;
+
   } else {
     styles.style.display = "none";
   }
+}
+
+function updateArray(){
+
+
+  var text = document.getElementById("output").innerHTML.replace("}", "");
+  console.log(document.getElementById("newArray").textContent);
+  
+
+ if (document.getElementById("newArray").textContent == "New Array") {
+  if (document.getElementById("output").textContent.length > 2) {
+    console.log()
+    document.getElementById("output").innerHTML = text + ",[{" + "<br>  ";
+  } else {
+    document.getElementById("output").innerHTML =
+      "<br>" + '"' + "[{" + "<br>  ";
+  }
+   
+   document.getElementById("newArray").innerHTML = "Close Array";
+ } else {
+   document.getElementById("output").innerHTML =
+     text + "<br>" + "}]" + "<br> }  ";
+   document.getElementById("newArray").innerHTML = "New Array";
+ }
+
+
+
 }
