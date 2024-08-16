@@ -64,7 +64,7 @@
 
 
         </ul>
-        <a href="https://sreeramofficial.github.io/officialWeb/"><span class="common-txt" style="margin-right: 100px;" class="navbar-text">
+        <a href="./index.html"><span class="common-txt" style="margin-right: 100px;" class="navbar-text">
           Home
          </span></a>
         
@@ -98,14 +98,8 @@
                   <label for="inputPassword4">Values</label>
                   <input type="text " class="form-control" id="value" placeholder="Enter Value">
                 </div>
-              </div>
-            
-              
-          
-
-              
-      
-              <div class="form-group">
+               
+                   <div class="form-group">
                 <div class="form-check">
                   <input class="form-check-input" type="checkbox" id="startArray">
                   <label class="form-check-label" for="gridCheck">
@@ -119,19 +113,31 @@
                   </label>
                 </div>
                   <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="randomText">
-                  <label class="form-check-label" for="gridCheck">
+                  <input class="form-check-input" type="checkbox" id="inputforcheck1"  onclick="displayPrecisionBox()"">
+                  <label class="form-check-label" for="gridCheck " >
                   Genarate with random text
                   </label>
                 </div>
-                <div class="form-check">
-                  <input class="form-check-input" type="checkbox" id="randomNumbers">
-                  <label class="form-check-label" for="gridCheck">
+                <div id="randomInput" class="form-check">
+                  <input  class="form-check-input" type="checkbox" id="inputforcheck2" onclick="displayPrecisionBox()">
+                  <label class="form-check-label" for="gridCheck" >
                   Genarate with numbers
                   </label>
                 </div>
               </div>
-              <button type="submit" class="btn btn-primary">Sign in</button>
+               
+            
+              
+          
+
+              
+      
+           
+              </div>
+               <div  class="displayPrecisionBox"  class="form-group col-md-6">
+                  <input    style="display: none;" class="form-control" id="valueForInput" placeholder="Enter valueadd" value="2">
+                </div>
+              <button style="margin-top: 20px;" type="submit" class="btn btn-primary">Genarate</button>
             </form>
             
           </div>
@@ -140,9 +146,9 @@
       <div class="col-sm-6">
         <div class="card">
           <div class="card-body">
-            <h5 class="card-title">Special title treatment</h5>
-            <p  id="output" class="card-text">please validate json</p>
-            <a href="#" onclick="handleclear(event)" class="btn btn-primary">Clear</a>
+            <h5 id="outputTitle" class="card-title"></h5>
+            <p  id="output" class="card-text">PLEASE ADD NEW JSON</p>
+            <a href="#" onclick=clearJson(event) class="btn btn-primary">Clear</a>
           </div>
         </div>
       </div>
