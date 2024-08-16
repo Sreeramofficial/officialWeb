@@ -1,6 +1,6 @@
 function handleFormSubmission(event) {
   event.preventDefault();
-
+  document.getElementById("cleanButton").style.display = "block";
   var key = document.getElementById("key").value;
   var value = document.getElementById("value").value;
   var isArrayStart = document.getElementById("startArray");
@@ -34,6 +34,7 @@ function checkIsEmpty(name, email) {
   }
 }
 function handleJson(name, email) {
+ 
   
   var text = document.getElementById("output").innerHTML.replace("}", "");
   // if(document.getElementById("newArray").value == "Close Array"){
@@ -90,7 +91,9 @@ function clearJson(event) {
   event.preventDefault();
   document.getElementById("outputTitle").innerHTML = null;
   document.getElementById("output").innerHTML = "PLEASE ADD NEW JSON";
-  document.getElementById("newArray").innerHTML = "New Array";
+  // document.getElementById("newArray").innerHTML = "New Array";
+  document.getElementById("cleanButton").style.display="none";
+  
 }
 function displayPrecisionBox() {
   console.log("methods call")
