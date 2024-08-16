@@ -45,6 +45,7 @@
 }
 
 
+
 .blink {
     animation: blink-animation 1s steps(5, start) infinite;
     -webkit-animation: blink-animation 1s steps(5, start) infinite;
@@ -60,10 +61,11 @@
     }
   }
 
-.navbar-brand{
-  font-family: "Prompt", sans-serif;
-  font-weight: 200;
+  .navbar-brand{
+  
+    font-family: "Prompt", system-ui;
+  font-weight: 100;
   font-style: normal;
-
-
-}
+  color: #3a0000;
+  
+  }
