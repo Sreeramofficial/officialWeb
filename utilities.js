@@ -10,10 +10,8 @@ function handleFormSubmission(event) {
   var isRandomNumbers = document.getElementById("inputforcheck2");
   var precision;
   if (isRandomText.checked || isRandomNumbers.checked) {
-   
     precision = document.getElementById("valueForInput").value;
-    console.log(precision);
-     value = handleCheckBox(isRandomText, isRandomNumbers,precision);
+    value = handleCheckBox(isRandomText, isRandomNumbers, precision);
   }
 
   checkIsEmpty(key, value);
@@ -34,27 +32,12 @@ function checkIsEmpty(name, email) {
   }
 }
 function handleJson(name, email) {
- 
-  
   var text = document.getElementById("output").innerHTML.replace("}", "");
   // if(document.getElementById("newArray").value == "Close Array"){
 
-    
-    
-      document.getElementById("output").innerHTML =
-        text +
-        ",<br>" +
-        '"' +
-        name +
-        '"' +
-        " : " +
-        '"' +
-        email +
-        '"' +
-        "<br> } ";
-  }
-
-
+  document.getElementById("output").innerHTML =
+    text + ",<br>" + '"' + name + '"' + " : " + '"' + email + '"' + "<br> } ";
+}
 
 function generateRandomString(length) {
   const characters =
@@ -73,9 +56,8 @@ function generateRandomNumbers(length) {
   }
   return result;
 }
-function handleCheckBox(isRandomText, isRandomNumbers,precision) {
-  console.log("pre "+precision)
-  precision=precision==null?2:precision;
+function handleCheckBox(isRandomText, isRandomNumbers, precision) {
+  precision = precision == null ? 2 : precision;
   if (isRandomText.checked || isRandomNumbers.checked) {
     if (isRandomText.checked) {
       return generateRandomString(precision);
@@ -92,14 +74,10 @@ function clearJson(event) {
   document.getElementById("outputTitle").innerHTML = null;
   document.getElementById("output").innerHTML = "PLEASE ADD NEW JSON";
   // document.getElementById("newArray").innerHTML = "New Array";
-  document.getElementById("cleanButton").style.display="none";
-  
+  document.getElementById("cleanButton").style.display = "none";
 }
 function displayPrecisionBox() {
-  console.log("methods call")
-
-
-  var styles= document.getElementById("valueForInput");
+  var styles = document.getElementById("valueForInput");
 
   if (
     document.getElementById("inputforcheck1").checked == true ||
@@ -107,35 +85,26 @@ function displayPrecisionBox() {
   ) {
     styles.style.display = "block";
     document.getElementById("valueForInput").value = 2;
-
   } else {
     styles.style.display = "none";
   }
 }
 
-function updateArray(){
-
-
+function updateArray() {
   var text = document.getElementById("output").innerHTML.replace("}", "");
-  console.log(document.getElementById("newArray").textContent);
-  
 
- if (document.getElementById("newArray").textContent == "New Array") {
-  if (document.getElementById("output").textContent.length > 2) {
-    console.log()
-    document.getElementById("output").innerHTML = text + ",[{" + "<br>  ";
+  if (document.getElementById("newArray").textContent == "New Array") {
+    if (document.getElementById("output").textContent.length > 2) {
+      document.getElementById("output").innerHTML = text + ",[{" + "<br>  ";
+    } else {
+      document.getElementById("output").innerHTML =
+        "<br>" + '"' + "[{" + "<br>  ";
+    }
+
+    document.getElementById("newArray").innerHTML = "Close Array";
   } else {
     document.getElementById("output").innerHTML =
-      "<br>" + '"' + "[{" + "<br>  ";
+      text + "<br>" + "}]" + "<br> }  ";
+    document.getElementById("newArray").innerHTML = "New Array";
   }
-   
-   document.getElementById("newArray").innerHTML = "Close Array";
- } else {
-   document.getElementById("output").innerHTML =
-     text + "<br>" + "}]" + "<br> }  ";
-   document.getElementById("newArray").innerHTML = "New Array";
- }
-
-
-
 }
