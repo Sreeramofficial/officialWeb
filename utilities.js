@@ -63,11 +63,25 @@ var isarraychecked = document.getElementById("arrayCheck");
 function handleFormSubmission(event) {
   event.preventDefault();
 
-  var name = document.getElementById("inputEmail4").value;
-  var email = document.getElementById("inputPassword4").value;
+  var key = document.getElementById("inputEmail4").value;
+  var value = document.getElementById("inputPassword4").value;
+  var isArrayStart = document.getElementById("startArray");
   var subscribeCheckbox = document.getElementById("gridCheck");
-  var isarraychecked = document.getElementById("arrayCheck");
-  checkIsEmpty(name, email, isarraychecked);
+  var isArrayEnd = document.getElementById("endArray");
+  var isRandomText = document.getElementById("randomText");
+  var isRandomNumbers = document.getElementById("randomNumbers");
+  if (isRandomText.checked || isRandomNumbers.checked) {
+    if (isRandomText.checked) {
+      value = generateRandomString(10);
+      document.getElementById("randomText").value = false;
+    } else {
+      value = generateRandomNumbers(10);
+      document.getElementById("randomNumbers").value = false;
+    }
+  }
+  console.log(document.getElementById("randomText").value);
+
+  checkIsEmpty(key, value, isarraychecked);
 }
 window.onload = function () {
   document
@@ -100,4 +114,21 @@ function handleJson(name, email, isarraychecked) {
     email +
     '"' +
     "<br> } ";
+}
+function generateRandomString(length) {
+  const characters =
+    "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+  let result = "";
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  return result;
+}
+function generateRandomNumbers(length) {
+  const characters = "123456789";
+  let result = "";
+  for (let i = 0; i < length; i++) {
+    result += characters.charAt(Math.floor(Math.random() * characters.length));
+  }
+  return result;
 }
